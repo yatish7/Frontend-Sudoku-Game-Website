@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudoku</title>
+     <style>
+    .external{
+        margin-top: 1%;
+		margin-left: 8%;
+		margin-right: 8%;
+    }
+    .in{
+        margin-left:90%;
+        margin-top:1%;
+        width: 9%;
+        height: 35px;
+        background-color: blue;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+    #tittle{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 60px;
+    }
+    .start{
+        text-align: center;
+        padding: 10px;
+        background-color: #f2f2f2;
+    }
+    .image{
+       width: 150px;
+       text-align: center;
+       border-radius: 5px;
+    }
+    .butt,.inst{
+        margin: 30px;
+        height: 50px;
+        width: 120px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        background-color: #4daea1;
+    }
+    .inst:hover{
+        background-color: #4caf4c;
+    }
+    .butt:hover{
+        background-color: #4caf4c;
+    }
+    .help{
+        float: left;
+        margin-left:5%;
+        width:50px;
+        justify-content: left;
+        cursor: pointer;
+        margin-top: -40px;
+    }
+    .setting{
+        float: right;
+        width: 50px;
+        justify-content: right;
+        cursor: pointer;
+        padding-right: 50px;
+        margin-top: -40px;
+    }
+    .sort{
+        height: 150px;
+        width: 200px;
+        border-radius: 4px;
+    }
+    .dabba{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .heading{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 40px;
+        color: rgba(255, 0, 21, 0.493);
+        text-align: center;
+    }
+    .pg{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 40px;
+        color: black;
+        text-align: center;
+    }
+    .cont{
+        width: 460px;
+        background-color: white;
+        top: 0%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%) scale(0.1);
+        border-radius: 20px;
+        height: 300px;
+        visibility:hidden;
+    }
+    .he{
+        width: 460px;
+        background-color: white;
+        top: 0%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%) scale(0.1);
+        border-radius: 20px;
+        height: 300px;
+        visibility:hidden;
+    }
+    .sett{
+        width: 460px;
+        background-color: white;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%) scale(1);
+        border-radius: 20px;
+        height: 300px;
+        visibility:hidden;
+    }
+    .si{
+        width: 450px;
+        background-color: white;
+        top: 0%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%) scale(0.1);
+        border-radius: 20px;
+        height: 450px;
+        visibility:hidden;
+        padding-left: 10px;
+        padding-right: 20px;
+        margin-top:-3%;
+        box-shadow:1px 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    .remo,.wrong{
+        float: right;
+        width: 40px;
+        cursor: pointer;
+        background-color: red;
+    }
+    .open{
+        visibility:visible;
+        top: 53%;
+        transform: translate(-50%,-50%) scale(1)
+    }
+     </style>
+</head>
+<body>
+    <button class="in" onclick="location.href='signup.html'">Sign in / Register</button>
+<div class="external">
+  <header>
+     <div class="start">
+          <h1 id="tittle">SUDOKU</h1>
+          <img src="help.jpg" alt="help" class="help" onclick="visi()">
+          <img src="setting.jpg" alt="setting" class="setting">
+          <br>
+          <br>
+          <img src="sudokuimg.jpg" alt="sudoku" class="image">
+          <br>
+          <button onclick="location.href='play.html'" class="butt">Play <img src="" alt=""></button></button>
+          <button class="inst" id="page" onclick="disp()">Instructions</button>
+     </div>
+ </header> 
+ <main>
+    <div class="cont" id="hide">
+        <h1 class="heading" >Instructions <img src="close.jpg" alt="close" class="remo" onclick="clos()"></h1>
+        <ul>
+            <li>
+              Every row must have each number from 1 to 9
+            </li>
+            <br>
+            <li>
+               Every coloumn must have each number from 1 to 9
+            </li>
+            <br>
+            <li>
+               Every nine square must have each number from 1 to 9
+            </li>
+            <br>
+            <li>
+                The game is over when the whole sudoku grid is correctly filled with numbers.
+            </li>
+        </ul>
+     </div>
+    <h2 style="text-align:center;">SUDOKU LEVELS</h2>
+    <div class="dabba">
+        <div>
+            <img src="level.jpg" alt="easy level" class="sort">
+            <p style="text-align:center;">Easy level</p>
+        </div>
+        <div>
+            <img src="level.jpg" alt="Medium level" class="sort">
+            <p style="text-align:center;">Medium level</p>
+        </div>
+        <div>
+            <img src="level.jpg" alt="hard level" class="sort">
+            <p style="text-align:center;">Hard level </p>
+        </div>
+    </div>
+    <div class="he" id="hel">
+        <h1 class="pg"><img src="close.jpg"alt="close" class="wrong" onclick="clo()"> welcome!!</h1>
+          <ul>
+            <li>
+                Choose the difficulty level wisely
+            </li>
+            <br>
+            <li>
+                Set the time limit as per your convenience and click on start game
+            </li>
+            <br>
+            <li>
+                You are allowed to do only 3 mistakes per game
+            </li>
+            <br>
+            <li>
+                Hope u have great game
+            </li>
+            <br>
+            <li>
+                For queries contact us on <span style="color: blue;">yatish.manne09@gmail.com</span>>
+            </li>
+          </ul>
+    </div>
+    <div class="sett">
+          <h3>Choose theme</h3>
+          <label for="110">
+              <input type="radio" value="dark" name="theme">dark
+          </label>
+          <label for="112">
+             <input type="radio" value="light" name="theme">light
+          </label>
+    </div>
+ </main>
+ <footer>
+      <h5>For any queries contact <span style="color: blue;">varshithpyla@gmail.com</span></h5></p>
+ </footer> 
+ </div> 
+ <script>
+     let dis=document.getElementById('hide')
+     function disp(){
+        dis.classList.add("open");
+       }
+       function clos(){
+        dis.classList.remove("open");
+       }
+     let vis=document.getElementById("hel") 
+     function visi(){
+        vis.classList.add("open");
+     }
+     function clo(){
+        vis.classList.remove("open");
+       }
+     let sig=document.getElementById("si")
+     function displ(){
+         sig.classList.add("open")
+     }
+     function cl(){
+         sig.classList.remove("open")
+     }
+ </script>
+</body>
+</html>

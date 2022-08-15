@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play</title>
+   <style>
+    #start{
+       text-align: center;
+       margin-left: 50%;
+       margin-top:2%;
+       cursor: pointer;
+       width: 10%;
+       height: 6%;
+       border-radius: 4px;
+    }
+    body {
+		margin-top: 4%;
+        margin-left: 8%;
+		margin-right: 8%;
+    }
+    .home{
+        width:50px;
+        float: left;
+        background-color: white;
+    }
+    .choose{
+        display: flex;
+        flex-direction: row;
+        margin-left:10%; 
+    } 
+    .pick{
+        margin-left:70%; 
+        margin-top:-8%
+    } 
+   .sub>p{
+        border: 1px solid black;
+        border-radius: 4px;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+        margin-right: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        text-align: center;
+        cursor: pointer;
+    }
+   </style>
+</head>
+<body>
+    <main>
+        <a href="index.html">
+            <img src="home.jpg" alt="home" class="home">
+        </a>
+        <br>
+        <br>
+      <div class="choose">
+          <div>
+                <p><h3>Difficulty Level </h3></p>
+                <label for="101">
+                <input type="radio" value="Easy" name="difficulty" id="101">Easy
+                </label>
+                <label for="102">
+                <input type="radio" value="Medium" name="difficulty" id="102">Medium
+                </label>
+                <label for="103">
+                <input type="radio" value="Hard" name="difficulty" id="103">Hard
+                </label>
+          </div>
+        </div>
+        <div class="pick">
+            <div>
+                <p><h3>Choose time</h3></p>
+                <label for="104">
+                    <input type="radio" value="5min" name="time" id="104">5min
+                </label>
+                <label for="105">
+                    <input type="radio" value="10min" name="time" id="105">10min
+                </label>
+                <label for="106">
+                    <input type="radio" value="15min" name="time" id="106">20min
+                </label>
+          </div>
+      </div>
+      <br>
+        <button id="start">Start game</button>
+      <div id="game">
+         <div class="sudboard"></div>
+         <div id="numberbox" class="sub">
+             <p id="one">1</p>
+             <p id="two">2</p>
+             <p id="three">3</p>
+             <p id="four">4</p>
+             <p id="five">5</p>
+             <p id="six">6</p>
+             <p id="seven">7</p>
+             <p id="eight">8</p>
+             <p id="nine">9</p>
+         </div>
+     </div>
+   </main>
+</body>
+</html>

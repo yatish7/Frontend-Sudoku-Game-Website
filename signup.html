@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+</head>
+<body>
+    <style>
+         .sign{
+        margin-left: 40%;
+        font-size: 30px;
+        }
+        .si{
+        width: 450px;
+        background-color: white;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%) scale(1);
+        border-radius: 20px;
+        height: 450px;
+        visibility:visible;
+        padding-left: 10px;
+        padding-right: 20px;
+        margin-top:-3%;
+        box-shadow:1px 4px 8px rgba(0, 0, 0, 0.5);
+      }
+      .dabba{
+        margin-top:-20%;
+      }
+      .cre{
+        margin-left:85%;
+        background-color: blue;
+        width: 14%;
+        height: 30px;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    input[type="text"],input[type="email"],input[type="password"]{
+            width:100%;
+            height:100%;
+            border-radius: 4px;
+            cursor:text;
+            border: none;
+            outline: none;
+        }
+    .wrong{
+        float: right;
+        width: 40px;
+        cursor: pointer;
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="si" id="si">
+        <h3 class="sign"><img src="close.jpg"alt="close" class="wrong" onclick="location.href='index.html'">Sign up</h3>
+           <br>
+        <form method="get" action="mailto:yatish.manne09@gmail.com">
+            <Fieldset>
+                <legend>Username</legend>
+                <input type="text" name="Uname" placeholder="Username should be atleast one caps and special character" tabindex="1" pattern=[a-zA-Z_]+ required >
+            </Fieldset>
+                <br>
+            <Fieldset>
+                <legend>Email id</legend>
+                <input type="email" name="Email"placeholder="Enter your email here"tabindex='2' required>
+            </Fieldset>
+                <br>
+            <fieldset>
+                <legend>Enter your Password</legend>
+                <input type="password" name="Pword"placeholder="Password should contain minimum 8 characters" tabindex="3" pattern=[a-zA-Z]+ min="xxxxxxxx" required >
+            </fieldset>
+                 <br>
+            <button class="cre">Create</button>
+            <br>
+            <a href="signin.html" class="dabba">
+                <p style="color:blue">Sign In</p>
+             </a>
+        </form>
+    </div>
+</body>
+</body>
+</html>
